@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url('donation.jpg');  /* Set the image as background */
+      background-size: cover;   /* Make sure it covers the whole page */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Don't repeat the image */
+      filter: brightness(0.8);  /* Darkens the background image */
+    }
+
+    .form-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Align forms vertically */
+      padding: 20px;
+    }
+
+    .form-content {
+      width: 600px;
+      background-color: #ffffff; /* Solid white background for the form */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    label {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    input, textarea {
+      flex: 2;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .thank-you {
+      display: none;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: black;  /* Set the footer background color to black */
+      color: white;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-content">
+      <h2>Donate Money</h2>
+      <form id="money-form">
+        <div class="form-group">
+          <label for="donation-amount">Amount (in USD):</label>
+          <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter amount" required>
+        </div>
+        <button type="submit">Donate Money</button>
+      </form>
+      <p id="money-thank-you" class="thank-you">Thank You for Donating!</p>
+    </div>
+
+    <div class="form-content">
+      <h2>Donate Goods</h2>
+      <form id="goods-form">
+        <div class="form-group">
+          <label for="goods-description">Goods Description:</label>
+          <textarea id="goods-description" name="goods-description" rows="4" placeholder="Describe the goods" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="goods-quantity">Quantity:</label>
+          <input type="number" id="goods-quantity" name="goods-quantity" placeholder="Enter quantity" required>
+        </div>
+        <button type="submit">Donate Goods</button>
+      </form>
+      <p id="goods-thank-you" class="thank-you">Thank You for Donating!</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2024 Disaster Management System
+  </footer>
+
+  <script>
+    // Handling Money Donation Form Submission
+    document.getElementById('money-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('money-thank-you').style.display = 'block';
+      document.getElementById('money-form').reset();
+    });
+
+    // Handling Goods Donation Form Submission
+    document.getElementById('goods-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('goods-thank-you').style.display = 'block';
+      document.getElementById('goods-form').reset();
+    });
+  </script>
+</body>
+</html>

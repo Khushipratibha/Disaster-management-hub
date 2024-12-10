@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Relief Centre</title>
+    <link rel="stylesheet" href="relief-search.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Find Nearest Relief Centre</h1>
+        </header>
+        <main>
+            <form id="relief-centre-form">
+                <div class="form-group">
+                    <label for="centre-name">Name of Relief Centre</label>
+                    <input type="text" id="centre-name" name="centre-name" placeholder="Enter relief centre name" required>
+                </div>
+                <div class="form-group">
+                    <label for="locality">Locality</label>
+                    <input type="text" id="locality" name="locality" placeholder="Enter locality" required>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">PINCODE</label>
+                    <input type="number" id="pincode" name="pincode" placeholder="Enter PINCODE" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="Enter city" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="Enter country" required>
+                </div>
+                <button type="submit">Search</button>
+            </form>
+            <div id="relief-result">
+                <p>Search results will appear here after submission.</p>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Disaster Management Hub</p>
+        </footer>
+    </div>
+</body>
+</html>

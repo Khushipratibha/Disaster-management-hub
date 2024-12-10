@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relief Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url('relief.jpg');  /* Set the image as background */
+      background-size: cover;  /* Make sure it covers the whole page */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Don't repeat the image */
+      filter: brightness(0.7); /* Darken the background slightly */
+    }
+
+    .form-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-content {
+      width: 600px;
+      background-color: #fff; /* Solid white background for the form (no transparency) */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    label {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    input, select {
+      flex: 2;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .thank-you {
+      display: none;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: black;  /* Set the footer background color to black */
+      color: white;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-content">
+      <h2>Relief Center Registration</h2>
+      <form id="relief-form">
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" required placeholder="Enter country">
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state" required placeholder="Enter state">
+        </div>
+        <div class="form-group">
+          <label for="city">City/District:</label>
+          <input type="text" id="city" name="city" required placeholder="Enter city/district">
+        </div>
+        <div class="form-group">
+          <label for="locality">Locality:</label>
+          <input type="text" id="locality" name="locality" required placeholder="Enter locality">
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode:</label>
+          <input type="text" id="pincode" name="pincode" required placeholder="Enter pincode">
+        </div>
+        <button type="submit">Register Relief Center</button>
+      </form>
+      <p id="thank-you" class="thank-you">You are now registered as a relief center!</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2024 Disaster Management System
+  </footer>
+
+  <script>
+    document.getElementById('relief-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('thank-you').style.display = 'block';
+      document.getElementById('relief-form').reset();
+    });
+  </script>
+</body>
+</html>
